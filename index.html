@@ -2,317 +2,176 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Building, zoning, and implementation guidance to help local jurisdictions establish clear pathways for relocatable tiny houses used as dwellings.">
-  <title>Relocatable Tiny Houses | Model Regulatory Framework</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Building, zoning, and implementation guidance for communities exploring relocatable tiny houses.">
+  <title>Relocatable Tiny Houses</title>
 
   <style>
-    :root {
-      color-scheme: light;
-      --background: #f7f6f2;
-      --surface: #ffffff;
-      --text: #28332e;
-      --muted: #536259;
-      --accent: #315c49;
-      --border: #d9dfd8;
-    }
-
-    * {
-      box-sizing: border-box;
-    }
+    * { box-sizing: border-box; }
 
     body {
       margin: 0;
-      background: var(--background);
-      color: var(--text);
+      background: #f7f5ef;
+      color: #283b32;
       font-family: system-ui, -apple-system, BlinkMacSystemFont,
         "Segoe UI", sans-serif;
-      font-size: 1.0625rem;
-      line-height: 1.7;
+      line-height: 1.6;
     }
 
     main {
-      max-width: 880px;
-      margin: 0 auto;
-      padding: 64px 24px;
+      max-width: 1120px;
+      min-height: 100svh;
+      margin: auto;
+      padding: 48px 32px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
     }
 
-    header {
-      padding-bottom: 36px;
-      border-bottom: 1px solid var(--border);
+    .layout {
+      display: grid;
+      grid-template-columns: 1.15fr 1fr;
+      align-items: center;
+      gap: 64px;
     }
 
-    h1, h2, h3 {
-      line-height: 1.2;
+    .label {
+      font-size: .78rem;
+      font-weight: 700;
+      letter-spacing: .16em;
     }
 
     h1 {
-      margin: 0 0 20px;
-      font-size: clamp(2.3rem, 7vw, 3.8rem);
-      letter-spacing: -0.04em;
-    }
-
-    h2 {
-      margin: 0 0 20px;
-      font-size: 1.8rem;
-    }
-
-    h3 {
-      margin: 0 0 10px;
-      font-size: 1.15rem;
-    }
-
-    p {
-      margin: 0 0 18px;
-    }
-
-    section {
-      margin-top: 40px;
-    }
-
-    a {
-      color: var(--accent);
-      text-underline-offset: 4px;
-    }
-
-    a:hover {
-      text-decoration-thickness: 2px;
-    }
-
-    a:focus-visible {
-      outline: 3px solid var(--accent);
-      outline-offset: 5px;
+      margin: 20px 0;
+      font-size: clamp(2.6rem, 5vw, 4.3rem);
+      line-height: 1.08;
+      letter-spacing: -.045em;
     }
 
     .intro {
-      max-width: 640px;
-      margin-bottom: 0;
-      color: var(--muted);
-      font-size: 1.25rem;
+      font-size: 1.18rem;
+      color: #4c5d53;
     }
 
-    .status {
+    p { margin: 0 0 20px; }
+
+    .invitation {
+      margin-top: 28px;
+      margin-bottom: 14px;
+      font-weight: 650;
+    }
+
+    .button {
       display: inline-block;
-      margin-bottom: 20px;
-      padding: 5px 12px;
-      border: 1px solid var(--border);
-      border-radius: 4px;
-      color: var(--accent);
-      font-size: 0.875rem;
+      padding: 13px 25px;
+      border-radius: 5px;
+      background: #315c49;
+      color: white;
+      text-decoration: none;
       font-weight: 650;
     }
 
-    .topics {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 18px;
-      padding: 0;
-      list-style: none;
+    .button:hover { background: #234635; }
+
+    .button:focus-visible {
+      outline: 3px solid #315c49;
+      outline-offset: 5px;
     }
 
-    .topics li {
-      padding: 24px;
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 8px;
+    .hint {
+      margin-top: 12px;
+      font-size: .85rem;
+      color: #536259;
     }
 
-    .topics p {
-      margin-bottom: 0;
+    figure {
+      margin: 0;
+      text-align: center;
     }
 
-    .review {
-      padding: 28px;
-      background: var(--surface);
-      border-left: 4px solid var(--accent);
-      border-radius: 4px;
+    figure img {
+      display: block;
+      width: 100%;
+      max-width: 390px;
+      height: auto;
+      margin: auto;
+      box-shadow: 0 16px 40px rgb(40 59 50 / 15%);
     }
 
-    .contact {
-      font-weight: 650;
-      overflow-wrap: anywhere;
-    }
-
-    .note, footer {
-      color: var(--muted);
-      font-size: 0.9375rem;
+    figcaption {
+      margin-top: 16px;
+      font-size: .85rem;
+      color: #536259;
     }
 
     footer {
-      margin-top: 48px;
-      padding-top: 24px;
-      border-top: 1px solid var(--border);
+      margin-top: 40px;
+      color: #536259;
+      font-size: .8rem;
     }
 
-    @media (max-width: 600px) {
-      main {
-        padding: 40px 20px;
-      }
+    @media (max-width: 720px) {
+      main { padding: 36px 24px; }
 
-      .topics {
+      .layout {
         grid-template-columns: 1fr;
+        gap: 32px;
       }
 
-      .review {
-        padding: 22px;
-      }
+      figure img { max-width: 290px; }
+
+      footer { margin-top: 32px; }
     }
   </style>
 </head>
 
 <body>
   <main>
-    <header>
-      <h1>Relocatable Tiny Houses</h1>
-      <p class="intro">
-        Building, zoning, and implementation guidance for communities
-        seeking clear pathways for small, safe homes.
-      </p>
-    </header>
+    <div class="layout">
+      <section aria-labelledby="heading">
+        <p class="label">RELOCATABLE TINY HOUSES</p>
 
-    <section aria-labelledby="framework-heading">
-      <p class="status">Draft 2 · Under review</p>
+        <h1 id="heading">Small homes.<br>Clear pathways.</h1>
 
-      <h2 id="framework-heading">
-        Model Regulatory Framework for Relocatable Tiny Houses
-      </h2>
+        <p class="intro">
+          Building, zoning, and implementation guidance to help
+          communities recognize relocatable tiny houses as dwellings.
+        </p>
 
-      <p>
-        Relocatable tiny houses are small homes built on an integral
-        chassis and designed to be moved and installed on a site for
-        residential occupancy. Their ability to be relocated creates
-        questions about construction, placement, inspections, and how
-        the home connects to its site.
-      </p>
+        <p>
+          Our <strong>Model Regulatory Framework</strong> is currently
+          in development. We welcome focused review inquiries from
+          interested jurisdictions, building officials, planners,
+          and technical or housing professionals.
+        </p>
 
-      <p>
-        This framework brings together proposed building code language,
-        model zoning provisions, and practical implementation guidance
-        to help jurisdictions address those questions. The goal is to
-        provide a useful starting point that communities can evaluate
-        and adapt to their local needs, applicable laws, and regulatory
-        authority.
-      </p>
+        <p class="invitation">
+          Interested in reviewing the framework for your community?
+        </p>
 
-      <p>
-        The work builds on the effort to recognize relocatable tiny
-        houses within the International Residential Code and on lessons
-        from communities developing their own approval pathways.
-      </p>
-    </section>
-
-    <section aria-labelledby="contents-heading">
-      <h2 id="contents-heading">What the framework includes</h2>
-
-      <ul class="topics">
-        <li>
-          <h3>Understanding the housing</h3>
-          <p>
-            Background on residential uses, separate ownership of the
-            home and land, and the relationship between the dwelling,
-            the prepared site, and its installation.
-          </p>
-        </li>
-
-        <li>
-          <h3>Building code language</h3>
-          <p>
-            Proposed provisions for chassis systems, structural
-            connections, site support and anchorage, and approval
-            pathways for new and existing homes.
-          </p>
-        </li>
-
-        <li>
-          <h3>Model zoning provisions</h3>
-          <p>
-            Tools for addressing where these homes may be permitted,
-            site requirements, and local policy choices about their
-            use within communities.
-          </p>
-        </li>
-
-        <li>
-          <h3>Implementation guidance</h3>
-          <p>
-            Practical considerations for permitting, inspections,
-            documentation, utilities, departmental coordination,
-            and occupancy approval.
-          </p>
-        </li>
-      </ul>
-    </section>
-
-    <section aria-labelledby="access-heading">
-      <h2 id="access-heading">Keeping the pathway accessible</h2>
-
-      <p>
-        A useful residential approval process should accommodate
-        owner-builders, small local builders, community efforts, and
-        professionally manufactured homes. The framework aims to
-        preserve these options while establishing clear ways to
-        demonstrate compliance with applicable safety requirements.
-      </p>
-
-      <p>
-        Communities retain authority over local land-use decisions.
-        The objective is to make the requirements and approval process
-        understandable, predictable, and workable for residents
-        and officials alike.
-      </p>
-    </section>
-
-    <section class="review" aria-labelledby="review-heading">
-      <h2 id="review-heading">Review and community participation</h2>
-
-      <p>
-        The framework is currently undergoing technical and
-        implementation review. Some provisions remain under development.
-      </p>
-
-      <p>
-        We welcome inquiries from building officials, planners,
-        jurisdiction staff, and technical and housing professionals
-        interested in evaluating the framework or exploring its
-        application in their communities.
-      </p>
-
-      <p>
-        To discuss participating in the review, please send a brief
-        introduction with your organization or jurisdiction, your area
-        of interest, and how you anticipate using the framework.
-        Working drafts are shared directly as part of this review process.
-      </p>
-
-      <p>
-        Residents interested in bringing this approach to their
-        community are also welcome to reach out, particularly to
-        connect the project with interested local officials.
-      </p>
-
-      <p class="contact">
-        Contact Macy Miller, LEED AP:<br>
-        <a href="mailto:mizacy@gmail.com?subject=Relocatable%20Tiny%20House%20Framework">
-          mizacy@gmail.com
+        <a class="button"
+           href="mailto:mizacy@gmail.com?subject=Relocatable%20Tiny%20House%20Framework">
+          Contact Macy
         </a>
-      </p>
 
-      <p class="note">
-        This framework is a working draft. It is not an adopted code
-        or an approval for any particular dwelling or site.
-      </p>
-    </section>
+        <p class="hint">
+          Please include your organization or jurisdiction
+          and area of interest.
+        </p>
+      </section>
+
+      <figure>
+        <img
+          src="cover.png"
+          alt="Cover of the Model Regulatory Framework for Relocatable Tiny Houses, showing a small home beside a larger house in a landscaped neighborhood."
+        >
+        <figcaption>Draft 2 · Under review</figcaption>
+      </figure>
+    </div>
 
     <footer>
-      <p>
-        Framework development led by Macy Miller, LEED AP, in
-        collaboration with members of the relocatable tiny house
-        proposal team.
-      </p>
-      <p>
-        Background and project updates:
-        <a href="https://minimotives.com/">MiniMotives.com</a>
-      </p>
+      Developed by Macy Miller, LEED AP, in collaboration with
+      the relocatable tiny house proposal team.
     </footer>
   </main>
 </body>
